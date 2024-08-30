@@ -1,5 +1,6 @@
 package com.senac.daniela.gerenciamentosalas.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -7,6 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "usuario")
+@JsonIgnoreProperties({"reserva", "planejamentoAlocacao", "registro", "usuarios"})
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +26,7 @@ public class Usuario {
 
     @Column(columnDefinition = "VARCHAR", name = "usuario_nome")
     private String nome;
+
     @Column(columnDefinition = "VARCHAR", name = "usuario_matricula")
     private String matricula;
 
@@ -81,6 +84,14 @@ public class Usuario {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
     public int getTipo() {

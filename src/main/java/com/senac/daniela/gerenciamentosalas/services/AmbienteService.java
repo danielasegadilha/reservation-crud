@@ -1,15 +1,13 @@
 package com.senac.daniela.gerenciamentosalas.services;
 
 import org.modelmapper.ModelMapper;
-import com.senac.daniela.gerenciamentosalas.dto.ambiente.AmbienteDTO;
+import com.senac.daniela.gerenciamentosalas.dto.AmbienteDTO;
 import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
 import com.senac.daniela.gerenciamentosalas.exceptions.AmbienteNotFoundException;
 import com.senac.daniela.gerenciamentosalas.repository.AmbienteRepository;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

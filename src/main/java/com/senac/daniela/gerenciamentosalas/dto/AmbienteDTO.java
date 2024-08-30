@@ -1,4 +1,4 @@
-package com.senac.daniela.gerenciamentosalas.dto.ambiente;
+package com.senac.daniela.gerenciamentosalas.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
@@ -7,19 +7,19 @@ public class AmbienteDTO {
     @NotBlank(message = "A descricao deve ser informada")
     private String descricao;
 
-    @NotBlank(message = "A descricao deve ser informada")
+    @NotBlank(message = "O andar deve ser informado")
     private int andar;
 
-    @NotBlank(message = "A descricao deve ser informada")
+    @NotBlank(message = "O tipo o deve ser informado")
     private String tipo;
 
-    @NotBlank(message = "A descricao deve ser informada")
+    @NotBlank(message = "O numero deve ser informado")
     private int numero;
 
-    @NotBlank(message = "A descricao deve ser informada")
+    @NotBlank(message = "A capacidade deve ser informada")
     private int capacidade;
 
-    @NotBlank(message = "A descricao deve ser informada")
+    @NotBlank(message = "O status deve ser informada")
     private int status;
 
     public @NotBlank(message = "A descricao deve ser informada") String getDescricao() {

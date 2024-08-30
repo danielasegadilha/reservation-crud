@@ -1,6 +1,6 @@
 package com.senac.daniela.gerenciamentosalas.controllers;
 
-import com.senac.daniela.gerenciamentosalas.dto.ambiente.AmbienteDTO;
+import com.senac.daniela.gerenciamentosalas.dto.AmbienteDTO;
 import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
 import com.senac.daniela.gerenciamentosalas.exceptions.AmbienteNotFoundException;
 import com.senac.daniela.gerenciamentosalas.services.AmbienteService;
