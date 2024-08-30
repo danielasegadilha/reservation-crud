@@ -2,7 +2,7 @@ package com.senac.daniela.gerenciamentosalas.dto.ambiente;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class AmbienteCreateDTO {
+public class AmbienteDTO {
 
     @NotBlank(message = "A descricao deve ser informada")
     private String descricao;

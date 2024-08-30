@@ -1,6 +1,7 @@
 package com.senac.daniela.gerenciamentosalas.services;
 
-import com.senac.daniela.gerenciamentosalas.dto.ambiente.AmbienteCreateDTO;
+import org.modelmapper.ModelMapper;
+import com.senac.daniela.gerenciamentosalas.dto.ambiente.AmbienteDTO;
 import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
 import com.senac.daniela.gerenciamentosalas.exceptions.AmbienteNotFoundException;
 import com.senac.daniela.gerenciamentosalas.repository.AmbienteRepository;
@@ -13,19 +14,22 @@ public class AmbienteService {
 
     private final AmbienteRepository ambienteRepository;
 
-    public AmbienteService(AmbienteRepository ambienteRepository) {
+    private final ModelMapper modelMapper;
+
+    public AmbienteService(AmbienteRepository ambienteRepository, ModelMapper modelMapper) {
         this.ambienteRepository = ambienteRepository;
+        this.modelMapper = modelMapper;
     }
 
-    public Ambiente createAmbiente(AmbienteCreateDTO ambienteCreateDTO) {
+    public Ambiente createAmbiente(AmbienteDTO ambienteDTO) {
         Ambiente ambiente = new Ambiente();
 
-        ambiente.setDescricao(ambienteCreateDTO.getDescricao());
-        ambiente.setAndar(ambienteCreateDTO.getAndar());
-        ambiente.setTipo(ambienteCreateDTO.getTipo());
-        ambiente.setNumero(ambienteCreateDTO.getNumero());
-        ambiente.setCapacidade(ambienteCreateDTO.getCapacidade());
-        ambiente.setStatus(ambienteCreateDTO.getStatus());
+        ambiente.setDescricao(ambienteDTO.getDescricao());
+        ambiente.setAndar(ambienteDTO.getAndar());
+        ambiente.setTipo(ambienteDTO.getTipo());
+        ambiente.setNumero(ambienteDTO.getNumero());
+        ambiente.setCapacidade(ambienteDTO.getCapacidade());
+        ambiente.setStatus(ambienteDTO.getStatus());
 
         return ambienteRepository.save(ambiente);
     }
@@ -39,17 +43,13 @@ public class AmbienteService {
         return ambienteRepository.getAmbienteAtivoById(id).orElseThrow(()-> new AmbienteNotFoundException("Ambiente não encontrado"));
     }
 
-    public Ambiente updateAmbiente(Ambiente ambiente) {
-        Ambiente ambienteAtual = this.getAmbienteById(ambiente.getId());
+    public Ambiente updateAmbiente(int id, AmbienteDTO ambienteDTO) {
+        Ambiente ambiente = this.getAmbienteById(id);
 
-        ambienteAtual.setDescricao(ambiente.getDescricao());
-        ambienteAtual.setAndar(ambiente.getAndar());
-        ambienteAtual.setTipo(ambiente.getTipo());
-        ambienteAtual.setNumero(ambiente.getNumero());
-        ambienteAtual.setCapacidade(ambiente.getCapacidade());
-        ambienteAtual.setStatus(ambiente.getStatus());
+        modelMapper.map(ambienteDTO, ambiente);
 
-        return ambienteRepository.save(ambienteAtual);
+        // Salvar o recurso atualizado
+        return ambienteRepository.save(ambiente);
 
     }
 
