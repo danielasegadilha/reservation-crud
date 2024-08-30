@@ -5,8 +5,11 @@ import com.senac.daniela.gerenciamentosalas.dto.ambiente.AmbienteDTO;
 import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
 import com.senac.daniela.gerenciamentosalas.exceptions.AmbienteNotFoundException;
 import com.senac.daniela.gerenciamentosalas.repository.AmbienteRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,36 +24,34 @@ public class AmbienteService {
         this.modelMapper = modelMapper;
     }
 
+    @Transactional
     public Ambiente createAmbiente(AmbienteDTO ambienteDTO) {
         Ambiente ambiente = new Ambiente();
-
-        ambiente.setDescricao(ambienteDTO.getDescricao());
-        ambiente.setAndar(ambienteDTO.getAndar());
-        ambiente.setTipo(ambienteDTO.getTipo());
-        ambiente.setNumero(ambienteDTO.getNumero());
-        ambiente.setCapacidade(ambienteDTO.getCapacidade());
-        ambiente.setStatus(ambienteDTO.getStatus());
+        modelMapper.map(ambienteDTO, ambiente);
 
         return ambienteRepository.save(ambiente);
     }
 
     public List<Ambiente> getAllAmbientes() {
-        return ambienteRepository.findAll();
-
+        return ambienteRepository.getAllAmbientes();
     }
 
     public Ambiente getAmbienteById(int id) {
         return ambienteRepository.getAmbienteAtivoById(id).orElseThrow(()-> new AmbienteNotFoundException("Ambiente não encontrado"));
     }
 
+    @Transactional
     public Ambiente updateAmbiente(int id, AmbienteDTO ambienteDTO) {
         Ambiente ambiente = this.getAmbienteById(id);
-
         modelMapper.map(ambienteDTO, ambiente);
 
-        // Salvar o recurso atualizado
         return ambienteRepository.save(ambiente);
 
+    }
+
+    public void deleteAmbiente(int id) {
+        Ambiente ambiente = this.getAmbienteById(id);
+        ambienteRepository.markAsDeleteAmbiente(id);
     }
 
 }

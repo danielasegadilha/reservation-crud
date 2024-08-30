@@ -22,8 +22,6 @@ public class AmbienteController {
     @GetMapping
     public ResponseEntity<List<Ambiente>> getAllAmbientes() {
         List<Ambiente> ambiente = ambienteService.getAllAmbientes();
-        if(ambiente.isEmpty())
-            return ResponseEntity.notFound().build();
         return ResponseEntity.ok(ambiente);
     }
 
@@ -45,9 +43,15 @@ public class AmbienteController {
     }
 
     @PatchMapping("/atualizar/{id}")
-    public ResponseEntity<Ambiente> updatembiente(@PathVariable int id, @RequestBody AmbienteDTO ambienteDTO) {
+    public ResponseEntity<Ambiente> updateAmbiente(@PathVariable int id, @RequestBody AmbienteDTO ambienteDTO) {
         Ambiente atualizarAmbiente = ambienteService.updateAmbiente(id, ambienteDTO);
         return new ResponseEntity<>(atualizarAmbiente, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/deletar/{id}")
+    public ResponseEntity<Ambiente> deleteAmbiente(@PathVariable int id) {
+        ambienteService.deleteAmbiente(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
