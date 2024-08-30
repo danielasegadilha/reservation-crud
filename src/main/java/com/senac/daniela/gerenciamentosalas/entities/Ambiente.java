@@ -14,7 +14,6 @@ public class Ambiente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ambiente_id", nullable = false)
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int id;
 
     @OneToOne(mappedBy = "ambiente")

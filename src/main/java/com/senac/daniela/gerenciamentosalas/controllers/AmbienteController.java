@@ -1,5 +1,6 @@
 package com.senac.daniela.gerenciamentosalas.controllers;
 
+import com.senac.daniela.gerenciamentosalas.dto.ambiente.AmbienteCreateDTO;
 import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
 import com.senac.daniela.gerenciamentosalas.exceptions.AmbienteNotFoundException;
 import com.senac.daniela.gerenciamentosalas.services.AmbienteService;
@@ -37,9 +38,17 @@ public class AmbienteController {
     }
 
     @PostMapping("/adicionar")
-    public ResponseEntity<Ambiente> createAmbiente(@RequestBody Ambiente ambiente) {
-        Ambiente novoAmbiente = ambienteService.createAmbiente(ambiente);;
+    public ResponseEntity<Ambiente> createAmbiente(@RequestBody AmbienteCreateDTO ambienteCreateDTO) {
+
+        Ambiente novoAmbiente = ambienteService.createAmbiente(ambienteCreateDTO);;
         return new ResponseEntity<>(novoAmbiente, HttpStatus.CREATED);
+    }
+
+    @PatchMapping("/atualizar")
+    public ResponseEntity<Ambiente> updatembiente(@RequestBody Ambiente ambiente) {
+
+        Ambiente atualizarAmbiente = ambienteService.updateAmbiente(ambiente);
+        return new ResponseEntity<>(atualizarAmbiente, HttpStatus.OK);
     }
 
 }
