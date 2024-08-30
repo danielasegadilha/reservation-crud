@@ -36,7 +36,7 @@ public class Usuario {
     @Column(name = "usuario_status", nullable = false)
     private int status;
 
-    @Column(columnDefinition = "DATETIME", name = "usuario_log_data_criacao", nullable = false)
+    @Column(columnDefinition = "DATETIME", name = "usuario_log_data_criacao", nullable = false, updatable = false)
     private LocalDateTime logDataCriacao;
 
     @ManyToOne
@@ -114,8 +114,9 @@ public class Usuario {
         return logDataCriacao;
     }
 
-    public void setLogDataCriacao(LocalDateTime logDataCriacao) {
-        this.logDataCriacao = logDataCriacao;
+    @PrePersist
+    protected void onCreate() {
+        logDataCriacao = LocalDateTime.now();
     }
 
     public Usuario getResponsavelId() {

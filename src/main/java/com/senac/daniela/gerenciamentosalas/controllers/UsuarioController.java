@@ -41,10 +41,13 @@ public class UsuarioController {
     }
 
     @PostMapping("/adicionar")
-    public ResponseEntity<Usuario> createUsuario(@RequestBody UsuarioDTO usuarioDTO) {
-
-        Usuario novoUsuario = usuarioService.createUsuario(usuarioDTO);;
-        return new ResponseEntity<>(novoUsuario, HttpStatus.CREATED);
+    public ResponseEntity<Usuario> createUsuario(@RequestParam Integer criadorId, @RequestBody UsuarioDTO usuarioDTO) {
+        try {
+            Usuario novoUsuario = usuarioService.createUsuario(criadorId, usuarioDTO);;
+            return new ResponseEntity<>(novoUsuario, HttpStatus.CREATED);
+        } catch (UsuarioNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @PatchMapping("/atualizar/{id}")

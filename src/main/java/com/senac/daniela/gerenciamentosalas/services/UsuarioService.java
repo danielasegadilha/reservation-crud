@@ -1,17 +1,15 @@
 package com.senac.daniela.gerenciamentosalas.services;
 
-import com.senac.daniela.gerenciamentosalas.dto.AmbienteDTO;
 import com.senac.daniela.gerenciamentosalas.dto.UsuarioDTO;
-import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
 import com.senac.daniela.gerenciamentosalas.entities.Usuario;
-import com.senac.daniela.gerenciamentosalas.exceptions.AmbienteNotFoundException;
-import com.senac.daniela.gerenciamentosalas.repository.AmbienteRepository;
+import com.senac.daniela.gerenciamentosalas.exceptions.UsuarioNotFoundException;
 import com.senac.daniela.gerenciamentosalas.repository.UsuarioRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
@@ -26,8 +24,12 @@ public class UsuarioService {
     }
 
     @Transactional
-    public Usuario createUsuario(UsuarioDTO usuarioDTO) {
+    public Usuario createUsuario(Integer criadorId, UsuarioDTO usuarioDTO) {
         Usuario usuario = new Usuario();
+
+        Usuario responsavel = this.getUsuarioById(criadorId);
+        usuario.setResponsavelId(responsavel);
+
         modelMapper.map(usuarioDTO, usuario);
 
         return usuarioRepository.save(usuario);
@@ -38,7 +40,7 @@ public class UsuarioService {
     }
 
     public Usuario getUsuarioById(int id) {
-        return usuarioRepository.getUsuarioAtivoById(id).orElseThrow(()-> new AmbienteNotFoundException("Usuário não encontrado"));
+        return usuarioRepository.getUsuarioAtivoById(id).orElseThrow(()-> new UsuarioNotFoundException("Usuário não encontrado"));
     }
 
     @Transactional

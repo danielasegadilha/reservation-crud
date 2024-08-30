@@ -1,5 +1,6 @@
 package com.senac.daniela.gerenciamentosalas.dto;
 
+import com.senac.daniela.gerenciamentosalas.entities.Usuario;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 
@@ -45,4 +46,5 @@ public class UsuarioDTO {
     public void setStatus(@NotBlank(message = "O status deve ser informada") int status) {
         this.status = status;
     }
+
 }
