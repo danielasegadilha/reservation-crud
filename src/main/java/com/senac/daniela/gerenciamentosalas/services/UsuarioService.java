@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UsuarioService {
@@ -39,7 +38,7 @@ public class UsuarioService {
         return usuarioRepository.getAllUsuarios();
     }
 
-    public Usuario getUsuarioById(int id) {
+    public static Usuario getUsuarioById(int id) {
         return usuarioRepository.getUsuarioAtivoById(id).orElseThrow(()-> new UsuarioNotFoundException("Usuário não encontrado"));
     }
 
@@ -53,7 +52,7 @@ public class UsuarioService {
     }
 
     public void deleteUsuario(int id) {
-        Usuario usuario = this.getUsuarioById(id);
+        this.getUsuarioById(id);
         usuarioRepository.markAsDeleteUsuario(id);
     }
 }

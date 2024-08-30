@@ -48,7 +48,7 @@ public class AmbienteService {
     }
 
     public void deleteAmbiente(int id) {
-        Ambiente ambiente = this.getAmbienteById(id);
+        this.getAmbienteById(id);
         ambienteRepository.markAsDeleteAmbiente(id);
     }
 
