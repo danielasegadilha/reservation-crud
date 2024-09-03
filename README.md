@@ -28,7 +28,7 @@ This project aims to create a Back-end application for managing and allocating r
 
 ## Database Model 💾
 
-![Entity-Relationship Model](images/bdchaves.png)
+![Entity-Relationship Model](bdchaves.png)
 
 ### Connection
 
