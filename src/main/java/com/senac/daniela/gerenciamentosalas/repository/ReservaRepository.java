@@ -1,5 +1,6 @@
 package com.senac.daniela.gerenciamentosalas.repository;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.senac.daniela.gerenciamentosalas.entities.Reserva;
 import com.senac.daniela.gerenciamentosalas.entities.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,12 +14,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
+@JsonIgnoreProperties({"usuarios"})
+
 public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
 
-    @Query("SELECT r FROM Reserva u WHERE r.status >= 0")
+    @Query("SELECT r FROM Reserva r WHERE r.status >= 0")
     List<Reserva> getAllReservas();
 
-    @Query("SELECT r FROM Reserva u WHERE r.status >= 0 AND r.id = :id")
+    @Query("SELECT r FROM Reserva r WHERE r.status >= 0 AND r.id = :id")
     Optional<Reserva> getReservaAtivaById(@Param("id") int id);
 
     @Modifying

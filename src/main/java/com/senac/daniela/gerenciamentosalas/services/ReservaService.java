@@ -16,10 +16,13 @@ public class ReservaService {
 
     private final ReservaRepository reservaRepository;
 
+    private UsuarioService usuarioService;
+
     private final ModelMapper modelMapper;
 
-    public ReservaService(ReservaRepository reservaRepository, ModelMapper modelMapper) {
+    public ReservaService(ReservaRepository reservaRepository, UsuarioService usuarioService, ModelMapper modelMapper) {
         this.reservaRepository = reservaRepository;
+        this.usuarioService = usuarioService;
         this.modelMapper = modelMapper;
     }
 
@@ -27,8 +30,9 @@ public class ReservaService {
     public Reserva createReserva(Integer usuarioId, ReservaDTO reservaDTO) {
         Reserva reserva = new Reserva();
 
-        Usuario usuario = UsuarioService.getUsuarioById(usuarioId);
-        Reserva.setUsuario(usuario);
+        Usuario usuario = usuarioService.getUsuarioById(usuarioId);
+        reserva.setUsuario(usuario);
+
 
         modelMapper.map(reservaDTO, reserva);
 
@@ -44,7 +48,7 @@ public class ReservaService {
     }
 
     @Transactional
-    public Reserva updateUsuario(int id, ReservaDTO reservaDTO) {
+    public Reserva updateReserva(int id, ReservaDTO reservaDTO) {
         Reserva reserva = this.getReservaById(id);
         modelMapper.map(reservaDTO, reserva);
 
@@ -52,7 +56,7 @@ public class ReservaService {
 
     }
 
-    public void deleteUsuario(int id) {
+    public void deleteReserva(int id) {
         this.getReservaById(id);
         reservaRepository.markAsDeleteReserva(id);
     }
