@@ -1,9 +1,12 @@
 package com.senac.daniela.gerenciamentosalas.services;
 
 import com.senac.daniela.gerenciamentosalas.dto.RegistroDTO;
+import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
+import com.senac.daniela.gerenciamentosalas.entities.PlanejamentoAlocacao;
 import com.senac.daniela.gerenciamentosalas.entities.Registro;
 import com.senac.daniela.gerenciamentosalas.entities.Usuario;
 import com.senac.daniela.gerenciamentosalas.exceptions.RegistroNotFoundException;
+import com.senac.daniela.gerenciamentosalas.repository.PlanejamentoAlocacaoRepository;
 import com.senac.daniela.gerenciamentosalas.repository.RegistroRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -18,11 +21,17 @@ public class RegistroService {
 
     private UsuarioService usuarioService;
 
+    private AmbienteService ambienteService;
+
+    private final PlanejamentoAlocacaoService planejamentoAlocacaoService;
+
     private final ModelMapper modelMapper;
 
-    public RegistroService(RegistroRepository registroRepository, UsuarioService usuarioService, ModelMapper modelMapper) {
+    public RegistroService(RegistroRepository registroRepository, UsuarioService usuarioService, AmbienteService ambienteService, PlanejamentoAlocacaoService planejamentoAlocacaoService, ModelMapper modelMapper) {
         this.registroRepository = registroRepository;
         this.usuarioService = usuarioService;
+        this.ambienteService = ambienteService;
+        this.planejamentoAlocacaoService = planejamentoAlocacaoService;
         this.modelMapper = modelMapper;
     }
 
@@ -31,7 +40,10 @@ public class RegistroService {
         Registro registro = new Registro();
 
         Usuario usuario = usuarioService.getUsuarioById(registroDTO.getUsuarioRetiradaId());
+        Ambiente ambiente = ambienteService.getAmbienteById(registroDTO.getAmbienteId());
+        PlanejamentoAlocacao planejamentoAlocacao = planejamentoAlocacaoService.getPlanejamentoAlocacaoById(registroDTO.getPlanejamentoAlocacaoId());
         registro.setUsuarioRetirada(usuario);
+        registro.setAmbiente(ambiente);
 
         modelMapper.map(registroDTO, registro);
 
