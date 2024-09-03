@@ -1,5 +1,6 @@
 package com.senac.daniela.gerenciamentosalas.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -9,6 +10,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "planejamento_alocacao")
+@JsonIgnoreProperties({"registro"})
+
 public class PlanejamentoAlocacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
