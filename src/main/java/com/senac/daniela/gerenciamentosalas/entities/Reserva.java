@@ -48,7 +48,7 @@ public class Reserva {
         return usuario;
     }
 
-    public static void setUsuario(Usuario usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 

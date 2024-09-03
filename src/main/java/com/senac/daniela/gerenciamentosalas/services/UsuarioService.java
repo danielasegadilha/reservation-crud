@@ -38,7 +38,7 @@ public class UsuarioService {
         return usuarioRepository.getAllUsuarios();
     }
 
-    public static Usuario getUsuarioById(int id) {
+    public Usuario getUsuarioById(int id) {
         return usuarioRepository.getUsuarioAtivoById(id).orElseThrow(()-> new UsuarioNotFoundException("Usuário não encontrado"));
     }
 
