@@ -44,6 +44,7 @@ public class RegistroService {
         PlanejamentoAlocacao planejamentoAlocacao = planejamentoAlocacaoService.getPlanejamentoAlocacaoById(registroDTO.getPlanejamentoAlocacaoId());
         registro.setUsuarioRetirada(usuario);
         registro.setAmbiente(ambiente);
+        registro.setPlanejamentoAlocacao(planejamentoAlocacao);
 
         modelMapper.map(registroDTO, registro);
 

@@ -1,9 +1,6 @@
 package com.senac.daniela.gerenciamentosalas.dto;
 
-import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
 import com.senac.daniela.gerenciamentosalas.entities.PlanejamentoAlocacao;
-import com.senac.daniela.gerenciamentosalas.entities.Usuario;
-import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -57,7 +54,7 @@ public class RegistroDTO {
         this.observacao = observacao;
     }
 
-    public PlanejamentoAlocacao getPlanejamentoAlocacaoId() {
+    public int getPlanejamentoAlocacaoId() {
         return planejamentoAlocacaoId;
     }
 
