@@ -23,7 +23,7 @@ This project aims to create a Back-end application for managing and allocating r
 - **Swagger Library Configured**: Automatic documentation of API endpoints.
 - **Database Connection**: Configuration to connect to a MySQL database.
 - **CRUD Endpoints**: Full CRUD operations (List, List by ID, Create, Update and Soft Delete).
-- **Package Structure**: `com.senac.daniela.reservationcrud`.
+- **Package Structure**: `com.senac.daniela.gerenciamentosalas`.
 - **Database Model**: Configured according to the provided specifications.
 
 ## Database Model 💾
@@ -38,18 +38,12 @@ This project aims to create a Back-end application for managing and allocating r
 
 ## Project Structure
 
-com.senac.[yourname].reservationcrud
-├── controller
-│   ├── RoomController.java
-├── model
-│   ├── Room.java
-├── repository
-│   ├── RoomRepository.java
-├── service
-│   ├── RoomService.java
-├── ReservationCrudApplication.java
-└── config
-    ├── SwaggerConfig.java
+- **controllers**: Contains REST controllers that handle HTTP requests.
+- **entities**: Contains JPA entities representing the database tables.
+- **repository**: Contains repository interfaces for database operations.
+- **services**: Contains service classes that handle business logic.
+- **Exceptions**: The main application class that starts the Spring Boot application.
+- **config**: Contains configuration classes, such as Swagger configuration.
 
 ## Endpoints
 
