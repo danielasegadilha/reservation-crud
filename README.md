@@ -71,7 +71,7 @@ This project aims to create a Back-end application for managing and allocating r
 | PUT    | /registro/altera/{id}              | Atualiza um registro existente                     |
 | DELETE | /registro/deleta/{id}              | Remove um registro (apagado lógico)                |
 
-###Planejamento Alocação:
+### Planejamento Alocação:
 
 | Método | Endpoint                           | Descrição                                          |
 |--------|------------------------------------|----------------------------------------------------|
