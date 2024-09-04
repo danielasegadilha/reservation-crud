@@ -1,5 +1,6 @@
 package com.senac.daniela.gerenciamentosalas.entities;
 
+import java.sql.Time;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -31,10 +32,10 @@ public class Reserva {
     private LocalDate data;
 
     @Column(columnDefinition = "TIME", name = "reserva_alocacao_hora_inicio", nullable = false)
-    private LocalTime horaInicio;
+    private Time horaInicio;
 
     @Column(columnDefinition = "TIME", name = "reserva_alocacao_hora_fim", nullable = false)
-    private LocalTime horaFim;
+    private Time horaFim;
 
     @Column(name = "reserva_alocacao_status", nullable = false)
     private int status;
@@ -79,19 +80,19 @@ public class Reserva {
         this.data = data;
     }
 
-    public LocalTime getHoraInicio() {
+    public Time getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(Time horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalTime getHoraFim() {
+    public Time getHoraFim() {
         return horaFim;
     }
 
-    public void setHoraFim(LocalTime horaFim) {
+    public void setHoraFim(Time horaFim) {
         this.horaFim = horaFim;
     }
 

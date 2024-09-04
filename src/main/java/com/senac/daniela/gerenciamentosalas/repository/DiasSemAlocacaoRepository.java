@@ -18,7 +18,7 @@ public interface DiasSemAlocacaoRepository extends JpaRepository<DiasSemAlocacao
     @Query("SELECT d FROM DiasSemAlocacao d WHERE d.status >= 0")
     List<DiasSemAlocacao> getAllDiasSemAlocacao();
 
-    @Query("SELECT d FROM DiasSemAlocacao d WHERE dstatus >= 0 AND d.id = :id")
+    @Query("SELECT d FROM DiasSemAlocacao d WHERE d.status >= 0 AND d.id = :id")
     Optional<DiasSemAlocacao> getDiasSemAlocacaoAtivaById(@Param("id") int id);
 
     @Modifying

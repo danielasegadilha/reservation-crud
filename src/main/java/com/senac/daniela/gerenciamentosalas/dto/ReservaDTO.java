@@ -1,8 +1,9 @@
 package com.senac.daniela.gerenciamentosalas.dto;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import java.sql.Time;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class ReservaDTO {
 
@@ -10,11 +11,11 @@ public class ReservaDTO {
 
     private LocalDate data;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
-    private LocalTime horaInicio;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+    private Time horaInicio;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
-    private LocalTime horaFim;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+    private Time horaFim;
 
     private int status;
 
@@ -35,19 +36,19 @@ public class ReservaDTO {
         this.data = data;
     }
 
-    public LocalTime getHoraInicio() {
+    public Time getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(Time horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalTime getHoraFim() {
+    public Time getHoraFim() {
         return horaFim;
     }
 
-    public void setHoraFim(LocalTime horaFim) {
+    public void setHoraFim(Time horaFim) {
         this.horaFim = horaFim;
     }
 
