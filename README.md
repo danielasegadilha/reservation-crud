@@ -87,9 +87,9 @@ This project aims to create a Back-end application for managing and allocating r
 |--------|-------------------------------|------------------------------------------------|
 | GET    | /dias-sem-alocacao              | Lista todas os dias sem alocacao               |
 | GET    | /dias-sem-alocacao/buscar/{id}         | Lista um dia sem alocacao por ID               |
-| POST   | /dias-sem-alocacao/adicionar     | Cria um novo dias sem alocacao                 |
-| PUT    | /dias-sem-alocacao/atualizar/{id}  | Atualiza um dias sem alocacao existente        |
-| DELETE | /dias-sem-alocacao/deletar/{id}  | Remove um dias sem alocacao (apagado lógico)   |
+| POST   | /dias-sem-alocacao/adicionar     | Cria um novo dia sem alocacao                 |
+| PUT    | /dias-sem-alocacao/atualizar/{id}  | Atualiza um dia sem alocacao existente        |
+| DELETE | /dias-sem-alocacao/deletar/{id}  | Remove um dia sem alocacao (apagado lógico)   |
 
 ### Ambiente:
 
@@ -105,11 +105,11 @@ This project aims to create a Back-end application for managing and allocating r
 
 | Método | Endpoint                    | Descrição                           |
 |--------|-----------------------------|-------------------------------------|
-| GET    | /senac/reserva              | Lista todas as reservas             |
-| GET    | /senac/reserva/buscar/{id}         | Lista uma reserva por ID            |
-| POST   | /senac/reserva/adicionar     | Cria uma nova reserva               |
-| PUT    | /senac/reserva/atualizar/{id}  | Atualiza uma reserva existente      |
-| DELETE | /senac/reserva/deletar/{id}  | Remove uma reserva (apagado lógico) |
+| GET    | /reserva              | Lista todas as reservas             |
+| GET    | /reserva/buscar/{id}         | Lista uma reserva por ID            |
+| POST   | /reserva/adicionar     | Cria uma nova reserva               |
+| PUT    | /reserva/atualizar/{id}  | Atualiza uma reserva existente      |
+| DELETE | /reserva/deletar/{id}  | Remove uma reserva (apagado lógico) |
 
 
 ## How to Run the Project 🚀
