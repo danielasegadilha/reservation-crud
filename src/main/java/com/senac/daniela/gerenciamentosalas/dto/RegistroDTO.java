@@ -14,7 +14,7 @@ public class RegistroDTO {
 
     private String observacao;
 
-    private PlanejamentoAlocacao planejamentoAlocacaoId;
+    private int planejamentoAlocacaoId;
 
     private int usuarioRetiradaId;
 
@@ -58,7 +58,7 @@ public class RegistroDTO {
         return planejamentoAlocacaoId;
     }
 
-    public void setPlanejamentoAlocacaoId(PlanejamentoAlocacao planejamentoAlocacaoId) {
+    public void setPlanejamentoAlocacaoId(int planejamentoAlocacaoId) {
         this.planejamentoAlocacaoId = planejamentoAlocacaoId;
     }
 

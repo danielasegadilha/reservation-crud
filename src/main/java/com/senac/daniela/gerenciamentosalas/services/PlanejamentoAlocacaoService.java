@@ -2,6 +2,7 @@ package com.senac.daniela.gerenciamentosalas.services;
 
 import com.senac.daniela.gerenciamentosalas.dto.PlanejamentoAlocacaoDTO;
 import com.senac.daniela.gerenciamentosalas.entities.*;
+import com.senac.daniela.gerenciamentosalas.exceptions.PlanejamentoAlocacaoNotFoundException;
 import com.senac.daniela.gerenciamentosalas.repository.PlanejamentoAlocacaoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -14,9 +15,9 @@ public class PlanejamentoAlocacaoService {
 
     private final PlanejamentoAlocacaoRepository planejamentoAlocacaoRepository;
 
-    private UsuarioService usuarioService;
+    private final UsuarioService usuarioService;
 
-    private AmbienteService ambienteService;
+    private final AmbienteService ambienteService;
 
     private final ReservaService reservaService;
 
@@ -31,15 +32,15 @@ public class PlanejamentoAlocacaoService {
     }
 
     @Transactional
-    public Registro createPlanejamentoAlocacao(PlanejamentoAlocacaoDTO planejamentoAlocacaoDTO) {
+    public PlanejamentoAlocacao createPlanejamentoAlocacao(PlanejamentoAlocacaoDTO planejamentoAlocacaoDTO) {
         PlanejamentoAlocacao planejamentoAlocacao = new PlanejamentoAlocacao();
 
-        Usuario usuario = usuarioService.getUsuarioById(planejamentoAlocacaoDTO.getUsuario());
-        Ambiente ambiente = ambienteService.getAmbienteById(planejamentoAlocacaoDTO.getAmbiente());
-        Reserva reserva = reservaService.getReservaById(planejamentoAlocacaoDTO.getReserva());
-        PlanejamentoAlocacao.setUsuario(usuario);
-        PlanejamentoAlocacao.setAmbiente(ambiente);
-        PlanejamentoAlocacao.setReserva(reserva);
+        Usuario usuario = usuarioService.getUsuarioById(planejamentoAlocacaoDTO.getUsuarioId());
+        Ambiente ambiente = ambienteService.getAmbienteById(planejamentoAlocacaoDTO.getAmbienteId());
+        Reserva reserva = reservaService.getReservaById(planejamentoAlocacaoDTO.getReservaId());
+        planejamentoAlocacao.setUsuario(usuario);
+        planejamentoAlocacao.setAmbiente(ambiente);
+        planejamentoAlocacao.setReserva(reserva);
 
         modelMapper.map(planejamentoAlocacaoDTO, planejamentoAlocacao);
 
@@ -51,7 +52,7 @@ public class PlanejamentoAlocacaoService {
     }
 
     public PlanejamentoAlocacao getPlanejamentoAlocacaoById(int id) {
-        return planejamentoAlocacaoRepository.getPlanejamentoAlocacaoAtivoById(id).orElseThrow(()-> new RegistroNotFoundException("Registro não encontrado"));
+        return planejamentoAlocacaoRepository.getPlanejamentoAlocacaoAtivoById(id).orElseThrow(()-> new PlanejamentoAlocacaoNotFoundException("Planejamento não encontrado"));
     }
 
     @Transactional
