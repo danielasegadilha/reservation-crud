@@ -56,60 +56,60 @@ This project aims to create a Back-end application for managing and allocating r
 | Método | Endpoint                           | Descrição                                          |
 |--------|------------------------------------|----------------------------------------------------|
 | GET    | /usuario                           | Lista todas os usuario                             |
-| GET    | /usuario/{id}                      | Lista um usuario por ID                            |
+| GET    | /usuario/buscar/{id}                      | Lista um usuario por ID                            |
 | POST   | /usuario/adiciona                  | Cria um novo usuario                               |
-| PUT    | /usuario/altera/{id}               | Atualiza um usuario existente                      |
-| DELETE | /usuario/deleta/{id}               | Remove um usuario (apagado lógico)                 |
+| PUT    | /usuario/atualizar/{id}               | Atualiza um usuario existente                      |
+| DELETE | /usuario/deletar/{id}               | Remove um usuario (apagado lógico)                 |
 
 ### Registro:
 
 | Método | Endpoint                           | Descrição                                          |
 |--------|------------------------------------|----------------------------------------------------|
 | GET    | /registro                          | Lista todas os registros                           |
-| GET    | /registro/{id}                     | Lista um registro por ID                           |
-| POST   | /registro/adiciona                 | Cria um novo registro                              |
-| PUT    | /registro/altera/{id}              | Atualiza um registro existente                     |
-| DELETE | /registro/deleta/{id}              | Remove um registro (apagado lógico)                |
+| GET    | /registro/buscar/{id}                     | Lista um registro por ID                           |
+| POST   | /registro/adicionar                 | Cria um novo registro                              |
+| PUT    | /registro/atualizar/{id}              | Atualiza um registro existente                     |
+| DELETE | /registro/deletar/{id}              | Remove um registro (apagado lógico)                |
 
 ### Planejamento Alocação:
 
 | Método | Endpoint                   | Descrição                                          |
 |--------|----------------------------|----------------------------------------------------|
 | GET    | /planejamento              | Lista todas os planejamento alocacao               |
-| GET    | /planejamento/{id}         | Lista um planejamento alocacao por ID              |
-| POST   | /planejamento/adiciona     | Cria um novo planejamento alocacao                 |
-| PUT    | /planejamento/altera/{id}  | Atualiza um planejamento alocacao existente        |
-| DELETE | /planejamento/deleta/{id}  | Remove um planejamento alocacao (apagado lógico)   |
+| GET    | /planejamento/buscar/{id}         | Lista um planejamento alocacao por ID              |
+| POST   | /planejamento/adicionar     | Cria um novo planejamento alocacao                 |
+| PUT    | /planejamento/atualizar/{id}  | Atualiza um planejamento alocacao existente        |
+| DELETE | /planejamento/deletar/{id}  | Remove um planejamento alocacao (apagado lógico)   |
 
 ### Dias sem alocação:
 
 | Método | Endpoint                      | Descrição                                      |
 |--------|-------------------------------|------------------------------------------------|
 | GET    | /diasSemAlocacao              | Lista todas os dias sem alocacao               |
-| GET    | /diasSemAlocacao/{id}         | Lista um dia sem alocacao por ID               |
-| POST   | /diasSemAlocacao/adiciona     | Cria um novo dias sem alocacao                 |
-| PUT    | /diasSemAlocacao/altera/{id}  | Atualiza um dias sem alocacao existente        |
-| DELETE | /diasSemAlocacao/deleta/{id}  | Remove um dias sem alocacao (apagado lógico)   |
+| GET    | /diasSemAlocacao/buscar/{id}         | Lista um dia sem alocacao por ID               |
+| POST   | /diasSemAlocacao/adicionar     | Cria um novo dias sem alocacao                 |
+| PUT    | /diasSemAlocacao/atualizar/{id}  | Atualiza um dias sem alocacao existente        |
+| DELETE | /diasSemAlocacao/deletar/{id}  | Remove um dias sem alocacao (apagado lógico)   |
 
 ### Ambiente:
 
 | Método | Endpoint               | Descrição                           |
 |--------|------------------------|-------------------------------------|
 | GET    | /ambiente              | Lista todos os ambientes            |
-| GET    | /ambiente/{id}         | Lista um ambiente por ID            |
-| POST   | /ambiente/adiciona     | Cria um novo ambiente               |
-| PUT    | /ambiente/altera/{id}  | Atualiza um ambiente existente      |
-| DELETE | /ambiente/deleta/{id}  | Remove um ambiente (apagado lógico) |
+| GET    | /ambiente/buscar/{id}         | Lista um ambiente por ID            |
+| POST   | /ambiente/adicionar    | Cria um novo ambiente               |
+| PUT    | /ambiente/atualizar/{id}  | Atualiza um ambiente existente      |
+| DELETE | /ambiente/deletar/{id}  | Remove um ambiente (apagado lógico) |
 
 ### Reserva:
 
 | Método | Endpoint                    | Descrição                           |
 |--------|-----------------------------|-------------------------------------|
 | GET    | /senac/reserva              | Lista todas as reservas             |
-| GET    | /senac/reserva/{id}         | Lista uma reserva por ID            |
-| POST   | /senac/reserva/adiciona     | Cria uma nova reserva               |
-| PUT    | /senac/reserva/altera/{id}  | Atualiza uma reserva existente      |
-| DELETE | /senac/reserva/deleta/{id}  | Remove uma reserva (apagado lógico) |
+| GET    | /senac/reserva/buscar/{id}         | Lista uma reserva por ID            |
+| POST   | /senac/reserva/adicionar     | Cria uma nova reserva               |
+| PUT    | /senac/reserva/atualizar/{id}  | Atualiza uma reserva existente      |
+| DELETE | /senac/reserva/deletar/{id}  | Remove uma reserva (apagado lógico) |
 
 
 ## How to Run the Project 🚀
@@ -117,12 +117,12 @@ This project aims to create a Back-end application for managing and allocating r
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/reservation-crud.git
+   git clone https://github.com/danielasegadilha/spring-reservation-crud.git
 
 2. **Navigate to the Project Directory**
 
    ```bash
-   cd reservation-crud
+   cd spring-reservation-crud
 
 3. **Compile and Run the Project**
 
