@@ -85,11 +85,11 @@ This project aims to create a Back-end application for managing and allocating r
 
 | Método | Endpoint                      | Descrição                                      |
 |--------|-------------------------------|------------------------------------------------|
-| GET    | /diasSemAlocacao              | Lista todas os dias sem alocacao               |
-| GET    | /diasSemAlocacao/buscar/{id}         | Lista um dia sem alocacao por ID               |
-| POST   | /diasSemAlocacao/adicionar     | Cria um novo dias sem alocacao                 |
-| PUT    | /diasSemAlocacao/atualizar/{id}  | Atualiza um dias sem alocacao existente        |
-| DELETE | /diasSemAlocacao/deletar/{id}  | Remove um dias sem alocacao (apagado lógico)   |
+| GET    | /dias-sem-alocacao              | Lista todas os dias sem alocacao               |
+| GET    | /dias-sem-alocacao/buscar/{id}         | Lista um dia sem alocacao por ID               |
+| POST   | /dias-sem-alocacao/adicionar     | Cria um novo dias sem alocacao                 |
+| PUT    | /dias-sem-alocacao/atualizar/{id}  | Atualiza um dias sem alocacao existente        |
+| DELETE | /dias-sem-alocacao/deletar/{id}  | Remove um dias sem alocacao (apagado lógico)   |
 
 ### Ambiente:
 
