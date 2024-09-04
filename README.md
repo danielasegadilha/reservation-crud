@@ -49,60 +49,59 @@ This project aims to create a Back-end application for managing and allocating r
 
 ## Endpoints
 
-Aqui está uma tabela com os endpoints disponíveis:
+**Swagger**: localhost:8080/senac
 
-Usuário:
+### Usuário:
 
-| Método | Endpoint                                 | Descrição                                          |
-|--------|------------------------------------------|----------------------------------------------------|
-| GET    | /senac/usuario                           | Lista todas os usuario                             |
-| GET    | /senac/usuario/{id}                      | Lista um usuario por ID                            |
-| POST   | /senac/usuario/adiciona                  | Cria um novo usuario                               |
-| PUT    | /senac/usuario/altera/{id}               | Atualiza um usuario existente                      |
-| DELETE | /senac/usuario/deleta/{id}               | Remove um usuario (apagado lógico)                 |
+| Método | Endpoint                           | Descrição                                          |
+|--------|------------------------------------|----------------------------------------------------|
+| GET    | /usuario                           | Lista todas os usuario                             |
+| GET    | /usuario/{id}                      | Lista um usuario por ID                            |
+| POST   | /usuario/adiciona                  | Cria um novo usuario                               |
+| PUT    | /usuario/altera/{id}               | Atualiza um usuario existente                      |
+| DELETE | /usuario/deleta/{id}               | Remove um usuario (apagado lógico)                 |
 
-Registro:
+### Registro:
 
-| Método | Endpoint                                 | Descrição                                          |
-|--------|------------------------------------------|----------------------------------------------------|
-| GET    | /senac/registro                          | Lista todas os registros                           |
-| GET    | /senac/registro/{id}                     | Lista um registro por ID                           |
-| POST   | /senac/registro/adiciona                 | Cria um novo registro                              |
-| PUT    | /senac/registro/altera/{id}              | Atualiza um registro existente                     |
-| DELETE | /senac/registro/deleta/{id}              | Remove um registro (apagado lógico)                |
+| Método | Endpoint                           | Descrição                                          |
+|--------|------------------------------------|----------------------------------------------------|
+| GET    | /registro                          | Lista todas os registros                           |
+| GET    | /registro/{id}                     | Lista um registro por ID                           |
+| POST   | /registro/adiciona                 | Cria um novo registro                              |
+| PUT    | /registro/altera/{id}              | Atualiza um registro existente                     |
+| DELETE | /registro/deleta/{id}              | Remove um registro (apagado lógico)                |
 
-Planejamento Alocação:
+###Planejamento Alocação:
 
-| Método | Endpoint                                 | Descrição                                          |
-|--------|------------------------------------------|----------------------------------------------------|
-| GET    | /senac/planejamentoAlocacao              | Lista todas os planejamento alocacao               |
-| GET    | /senac/planejamentoAlocacao/{id}         | Lista um planejamento alocacao por ID              |
-| POST   | /senac/planejamentoAlocacao/adiciona     | Cria um novo planejamento alocacao                 |
-| PUT    | /senac/planejamentoAlocacao/altera/{id}  | Atualiza um planejamento alocacao existente        |
-| DELETE | /senac/planejamentoAlocacao/deleta/{id}  | Remove um planejamento alocacao (apagado lógico)   |
+| Método | Endpoint                           | Descrição                                          |
+|--------|------------------------------------|----------------------------------------------------|
+| GET    | /planejamentoAlocacao              | Lista todas os planejamento alocacao               |
+| GET    | /planejamentoAlocacao/{id}         | Lista um planejamento alocacao por ID              |
+| POST   | /planejamentoAlocacao/adiciona     | Cria um novo planejamento alocacao                 |
+| PUT    | /planejamentoAlocacao/altera/{id}  | Atualiza um planejamento alocacao existente        |
+| DELETE | /planejamentoAlocacao/deleta/{id}  | Remove um planejamento alocacao (apagado lógico)   |
 
-Dias sem alocação:
+### Dias sem alocação:
 
-| Método | Endpoint                                 | Descrição                                 |
-|--------|------------------------------------------|-------------------------------------------|
-| GET    | /senac/diasSemAlocacao              | Lista todas os dias sem alocacao               |
-| GET    | /senac/diasSemAlocacao/{id}         | Lista um dia sem alocacao por ID               |
-| POST   | /senac/diasSemAlocacao/adiciona     | Cria um novo dias sem alocacao                 |
-| PUT    | /senac/diasSemAlocacao/altera/{id}  | Atualiza um dias sem alocacao existente        |
-| DELETE | /senac/diasSemAlocacao/deleta/{id}  | Remove um dias sem alocacao (apagado lógico)   |
+| Método | Endpoint                      | Descrição                                      |
+|--------|-------------------------------|------------------------------------------------|
+| GET    | /diasSemAlocacao              | Lista todas os dias sem alocacao               |
+| GET    | /diasSemAlocacao/{id}         | Lista um dia sem alocacao por ID               |
+| POST   | /diasSemAlocacao/adiciona     | Cria um novo dias sem alocacao                 |
+| PUT    | /diasSemAlocacao/altera/{id}  | Atualiza um dias sem alocacao existente        |
+| DELETE | /diasSemAlocacao/deleta/{id}  | Remove um dias sem alocacao (apagado lógico)   |
 
-Ambiente:
+### Ambiente:
 
-| Método | Endpoint                     | Descrição                           |
-|--------|------------------------------|-------------------------------------|
-| GET    | /senac/ambiente              | Lista todos os ambientes            |
-| GET    | /senac/ambiente/{id}         | Lista um ambiente por ID            |
-| POST   | /senac/ambiente/adiciona     | Cria um novo ambiente               |
-| PUT    | /senac/ambiente/altera/{id}  | Atualiza um ambiente existente      |
-| DELETE | /senac/ambiente/deleta/{id}  | Remove um ambiente (apagado lógico) |
+| Método | Endpoint               | Descrição                           |
+|--------|------------------------|-------------------------------------|
+| GET    | /ambiente              | Lista todos os ambientes            |
+| GET    | /ambiente/{id}         | Lista um ambiente por ID            |
+| POST   | /ambiente/adiciona     | Cria um novo ambiente               |
+| PUT    | /ambiente/altera/{id}  | Atualiza um ambiente existente      |
+| DELETE | /ambiente/deleta/{id}  | Remove um ambiente (apagado lógico) |
 
-
-Reserva:
+### Reserva:
 
 | Método | Endpoint                    | Descrição                           |
 |--------|-----------------------------|-------------------------------------|
