@@ -1,7 +1,10 @@
 package com.senac.daniela.gerenciamentosalas.services;
 
 import com.senac.daniela.gerenciamentosalas.dto.PlanejamentoAlocacaoDTO;
-import com.senac.daniela.gerenciamentosalas.entities.*;
+import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
+import com.senac.daniela.gerenciamentosalas.entities.PlanejamentoAlocacao;
+import com.senac.daniela.gerenciamentosalas.entities.Reserva;
+import com.senac.daniela.gerenciamentosalas.entities.Usuario;
 import com.senac.daniela.gerenciamentosalas.exceptions.PlanejamentoAlocacaoNotFoundException;
 import com.senac.daniela.gerenciamentosalas.repository.PlanejamentoAlocacaoRepository;
 import org.modelmapper.ModelMapper;

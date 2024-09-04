@@ -6,7 +6,6 @@ import com.senac.daniela.gerenciamentosalas.entities.PlanejamentoAlocacao;
 import com.senac.daniela.gerenciamentosalas.entities.Registro;
 import com.senac.daniela.gerenciamentosalas.entities.Usuario;
 import com.senac.daniela.gerenciamentosalas.exceptions.RegistroNotFoundException;
-import com.senac.daniela.gerenciamentosalas.repository.PlanejamentoAlocacaoRepository;
 import com.senac.daniela.gerenciamentosalas.repository.RegistroRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
