@@ -73,13 +73,13 @@ This project aims to create a Back-end application for managing and allocating r
 
 ### Planejamento Alocação:
 
-| Método | Endpoint                           | Descrição                                          |
-|--------|------------------------------------|----------------------------------------------------|
-| GET    | /planejamentoAlocacao              | Lista todas os planejamento alocacao               |
-| GET    | /planejamentoAlocacao/{id}         | Lista um planejamento alocacao por ID              |
-| POST   | /planejamentoAlocacao/adiciona     | Cria um novo planejamento alocacao                 |
-| PUT    | /planejamentoAlocacao/altera/{id}  | Atualiza um planejamento alocacao existente        |
-| DELETE | /planejamentoAlocacao/deleta/{id}  | Remove um planejamento alocacao (apagado lógico)   |
+| Método | Endpoint                   | Descrição                                          |
+|--------|----------------------------|----------------------------------------------------|
+| GET    | /planejamento              | Lista todas os planejamento alocacao               |
+| GET    | /planejamento/{id}         | Lista um planejamento alocacao por ID              |
+| POST   | /planejamento/adiciona     | Cria um novo planejamento alocacao                 |
+| PUT    | /planejamento/altera/{id}  | Atualiza um planejamento alocacao existente        |
+| DELETE | /planejamento/deleta/{id}  | Remove um planejamento alocacao (apagado lógico)   |
 
 ### Dias sem alocação:
 
