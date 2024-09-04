@@ -2,15 +2,10 @@ package com.senac.daniela.gerenciamentosalas.services;
 
 
 import com.senac.daniela.gerenciamentosalas.dto.DiasSemAlocacaoDTO;
-import com.senac.daniela.gerenciamentosalas.dto.ReservaDTO;
 import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
 import com.senac.daniela.gerenciamentosalas.entities.DiasSemAlocacao;
-import com.senac.daniela.gerenciamentosalas.entities.Reserva;
-import com.senac.daniela.gerenciamentosalas.entities.Usuario;
 import com.senac.daniela.gerenciamentosalas.exceptions.DiasSemAlocacaoNotFoundException;
-import com.senac.daniela.gerenciamentosalas.exceptions.ReservaNotFoundException;
 import com.senac.daniela.gerenciamentosalas.repository.DiasSemAlocacaoRepository;
-import com.senac.daniela.gerenciamentosalas.repository.ReservaRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,7 +28,7 @@ public class DiasSemAlocacaoService {
     }
 
     @Transactional
-    public Reserva createDiasSemAlocacao(Integer ambienteId, DiasSemAlocacaoDTO diaSemAlocacaoDTO) {
+    public DiasSemAlocacao createDiasSemAlocacao(Integer ambienteId, DiasSemAlocacaoDTO diaSemAlocacaoDTO) {
         DiasSemAlocacao diaSemAlocacao = new DiasSemAlocacao();
 
         Ambiente ambiente = ambienteService.getAmbienteById(ambienteId);
