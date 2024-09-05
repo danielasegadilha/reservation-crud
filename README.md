@@ -57,7 +57,7 @@ This project aims to create a Back-end application for managing and allocating r
 |--------|------------------------------------|----------------------------------------------------|
 | GET    | /usuario                           | Lista todas os usuario                             |
 | GET    | /usuario/buscar/{id}                      | Lista um usuario por ID                            |
-| POST   | /usuario/adiciona                  | Cria um novo usuario                               |
+| POST   | /usuario/adicionar                  | Cria um novo usuario                               |
 | PUT    | /usuario/atualizar/{id}               | Atualiza um usuario existente                      |
 | DELETE | /usuario/deletar/{id}               | Remove um usuario (apagado lógico)                 |
 
