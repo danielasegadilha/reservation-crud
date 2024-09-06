@@ -28,14 +28,14 @@ public class Reserva {
     @Column(columnDefinition = "VARCHAR", name = "reserva_alocacao_justificativa", nullable = false)
     private String justificativa;
 
-    @Column(columnDefinition = "DATE", name = "reserva_alocacao_data", nullable = false)
+    @Column(name = "reserva_alocacao_data", nullable = false)
     private LocalDate data;
 
-    @Column(columnDefinition = "TIME", name = "reserva_alocacao_hora_inicio", nullable = false)
-    private Time horaInicio;
+    @Column(name = "reserva_alocacao_hora_inicio", nullable = false)
+    private LocalTime horaInicio;
 
-    @Column(columnDefinition = "TIME", name = "reserva_alocacao_hora_fim", nullable = false)
-    private Time horaFim;
+    @Column(name = "reserva_alocacao_hora_fim", nullable = false)
+    private LocalTime horaFim;
 
     @Column(name = "reserva_alocacao_status", nullable = false)
     private int status;
@@ -80,19 +80,19 @@ public class Reserva {
         this.data = data;
     }
 
-    public Time getHoraInicio() {
+    public LocalTime getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(Time horaInicio) {
+    public void setHoraInicio(LocalTime horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public Time getHoraFim() {
+    public LocalTime getHoraFim() {
         return horaFim;
     }
 
-    public void setHoraFim(Time horaFim) {
+    public void setHoraFim(LocalTime horaFim) {
         this.horaFim = horaFim;
     }
 

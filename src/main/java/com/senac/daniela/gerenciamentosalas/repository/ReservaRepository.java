@@ -14,8 +14,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-@JsonIgnoreProperties({"usuarios"})
-
 public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
 
     @Query("SELECT r FROM Reserva r WHERE r.status >= 0")

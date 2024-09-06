@@ -11,21 +11,20 @@ import java.util.Set;
 @Entity
 @Table(name = "planejamento_alocacao")
 @JsonIgnoreProperties({"registro"})
-
 public class PlanejamentoAlocacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "planejamento_alocacao_id", nullable = false)
     private int id;
 
-    @Column(columnDefinition = "DATE", name = "planejamento_alocacao_data", nullable = false)
+    @Column(name = "planejamento_alocacao_data")
     private LocalDate data;
 
-    @Column(columnDefinition = "TIME", name = "planejamento_alocacao_hora_inicio", nullable = false)
-    private LocalTime horaInicio;
+    @Column(name = "planejamento_alocacao_hora_inicio")
+    private java.sql.Time horaInicio;
 
-    @Column(columnDefinition = "TIME", name = "planejamento_alocacao_hora_fim", nullable = false)
-    private LocalTime horaFim;
+    @Column(name = "planejamento_alocacao_hora_fim")
+    private java.sql.Time horaFim;
 
     @Column(columnDefinition = "VARCHAR", name = "planejamento_alocacao_observacao", nullable = false)
     private String observacao;
@@ -64,19 +63,19 @@ public class PlanejamentoAlocacao {
         this.data = data;
     }
 
-    public LocalTime getHoraInicio() {
+    public java.sql.Time getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(java.sql.Time horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalTime getHoraFim() {
+    public java.sql.Time getHoraFim() {
         return horaFim;
     }
 
-    public void setHoraFim(LocalTime horaFim) {
+    public void setHoraFim(java.sql.Time horaFim) {
         this.horaFim = horaFim;
     }
 
