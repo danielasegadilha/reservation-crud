@@ -38,14 +38,18 @@ public class PlanejamentoAlocacaoService {
     public PlanejamentoAlocacao createPlanejamentoAlocacao(PlanejamentoAlocacaoDTO planejamentoAlocacaoDTO) {
         PlanejamentoAlocacao planejamentoAlocacao = new PlanejamentoAlocacao();
 
+        planejamentoAlocacao.setData(planejamentoAlocacaoDTO.getData());
+        planejamentoAlocacao.setHoraInicio(planejamentoAlocacaoDTO.getHoraInicio());
+        planejamentoAlocacao.setHoraFim(planejamentoAlocacaoDTO.getHoraFim());
+        planejamentoAlocacao.setObservacao(planejamentoAlocacaoDTO.getObservacao());
+        planejamentoAlocacao.setStatus(planejamentoAlocacaoDTO.getStatus());
+
         Usuario usuario = usuarioService.getUsuarioById(planejamentoAlocacaoDTO.getUsuarioId());
         Ambiente ambiente = ambienteService.getAmbienteById(planejamentoAlocacaoDTO.getAmbienteId());
         Reserva reserva = reservaService.getReservaById(planejamentoAlocacaoDTO.getReservaId());
         planejamentoAlocacao.setUsuario(usuario);
         planejamentoAlocacao.setAmbiente(ambiente);
         planejamentoAlocacao.setReserva(reserva);
-
-        modelMapper.map(planejamentoAlocacaoDTO, planejamentoAlocacao);
 
         return planejamentoAlocacaoRepository.save(planejamentoAlocacao);
     }
