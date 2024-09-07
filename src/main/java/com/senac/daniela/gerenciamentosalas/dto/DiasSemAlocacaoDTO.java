@@ -15,9 +15,9 @@ public class DiasSemAlocacaoDTO {
 
     private int diaSemana;
 
-    private LocalTime horarioInicio;
+    private java.sql.Time horarioInicio;
 
-    private LocalTime horarioFim;
+    private java.sql.Time horarioFim;
 
     private int status;
 
@@ -39,19 +39,19 @@ public class DiasSemAlocacaoDTO {
         this.diaSemana = diaSemana;
     }
 
-    public LocalTime getHorarioInicio() {
+    public java.sql.Time getHorarioInicio() {
         return horarioInicio;
     }
 
-    public void setHorarioInicio(LocalTime horarioInicio) {
+    public void setHorarioInicio(java.sql.Time horarioInicio) {
         this.horarioInicio = horarioInicio;
     }
 
-    public LocalTime getHorarioFim() {
+    public java.sql.Time getHorarioFim() {
         return horarioFim;
     }
 
-    public void setHorarioFim(LocalTime horarioFim) {
+    public void setHorarioFim(java.sql.Time horarioFim) {
         this.horarioFim = horarioFim;
     }
 

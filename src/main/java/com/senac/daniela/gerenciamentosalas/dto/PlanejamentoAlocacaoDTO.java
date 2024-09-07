@@ -1,18 +1,18 @@
 package com.senac.daniela.gerenciamentosalas.dto;
 
-import com.senac.daniela.gerenciamentosalas.entities.Ambiente;
-import com.senac.daniela.gerenciamentosalas.entities.Reserva;
-import com.senac.daniela.gerenciamentosalas.entities.Usuario;
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
+
 
 public class PlanejamentoAlocacaoDTO {
 
     private LocalDate data;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
 
     private java.sql.Time horaInicio;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
 
     private java.sql.Time horaFim;
 

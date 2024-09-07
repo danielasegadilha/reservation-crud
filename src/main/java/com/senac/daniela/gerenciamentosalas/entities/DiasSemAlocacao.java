@@ -22,10 +22,10 @@ public class DiasSemAlocacao {
     private int diaSemana;
 
     @Column(columnDefinition = "TIME", name = "dias_sem_alocacao_horario_inicio", nullable = false)
-    private LocalTime horarioInicio;
+    private java.sql.Time horarioInicio;
 
     @Column(columnDefinition = "TIME", name = "dias_sem_alocacao_horario_fim", nullable = false)
-    private LocalTime horarioFim;
+    private java.sql.Time horarioFim;
 
     @Column(name = "dias_sem_alocacao_status", nullable = false)
     private int status;
@@ -58,19 +58,19 @@ public class DiasSemAlocacao {
         this.diaSemana = diaSemana;
     }
 
-    public LocalTime getHorarioInicio() {
+    public java.sql.Time getHorarioInicio() {
         return horarioInicio;
     }
 
-    public void setHorarioInicio(LocalTime horarioInicio) {
+    public void setHorarioInicio(java.sql.Time horarioInicio) {
         this.horarioInicio = horarioInicio;
     }
 
-    public LocalTime getHorarioFim() {
+    public java.sql.Time getHorarioFim() {
         return horarioFim;
     }
 
-    public void setHorarioFim(LocalTime horarioFim) {
+    public void setHorarioFim(java.sql.Time horarioFim) {
         this.horarioFim = horarioFim;
     }
 

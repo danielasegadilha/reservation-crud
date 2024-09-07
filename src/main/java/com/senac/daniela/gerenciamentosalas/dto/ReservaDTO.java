@@ -9,9 +9,9 @@ public class ReservaDTO {
 
     private LocalDate data;
 
-    private LocalTime horaInicio;
+    private java.sql.Time horaInicio;
 
-    private LocalTime horaFim;
+    private java.sql.Time horaFim;
 
     private int status;
 
@@ -32,19 +32,19 @@ public class ReservaDTO {
         this.data = data;
     }
 
-    public LocalTime getHoraInicio() {
+    public java.sql.Time getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(java.sql.Time horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalTime getHoraFim() {
+    public java.sql.Time getHoraFim() {
         return horaFim;
     }
 
-    public void setHoraFim(LocalTime horaFim) {
+    public void setHoraFim(java.sql.Time horaFim) {
         this.horaFim = horaFim;
     }
 

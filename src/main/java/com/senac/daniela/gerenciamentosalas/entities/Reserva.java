@@ -32,10 +32,10 @@ public class Reserva {
     private LocalDate data;
 
     @Column(name = "reserva_alocacao_hora_inicio", nullable = false)
-    private LocalTime horaInicio;
+    private java.sql.Time horaInicio;
 
     @Column(name = "reserva_alocacao_hora_fim", nullable = false)
-    private LocalTime horaFim;
+    private java.sql.Time horaFim;
 
     @Column(name = "reserva_alocacao_status", nullable = false)
     private int status;
@@ -80,19 +80,19 @@ public class Reserva {
         this.data = data;
     }
 
-    public LocalTime getHoraInicio() {
+    public java.sql.Time getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(LocalTime horaInicio) {
+    public void setHoraInicio(java.sql.Time horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public LocalTime getHoraFim() {
+    public java.sql.Time getHoraFim() {
         return horaFim;
     }
 
-    public void setHoraFim(LocalTime horaFim) {
+    public void setHoraFim(java.sql.Time horaFim) {
         this.horaFim = horaFim;
     }
 
